@@ -1,0 +1,55 @@
+:root {
+    --cor-primaria: #82C1CF;
+    --cor-secundaria: #4A7077;
+    --cor-fundo-claro: #FFEFE8;
+}
+
+body { background-color: var(--cor-fundo-claro); font-family: 'Inter', sans-serif; }
+
+header h1 { color: var(--cor-secundaria); font-weight: 700; }
+
+.card { 
+    background-color: var(--cor-primaria) !important; 
+    border: none !important; 
+    border-radius: 15px !important; 
+    color: white !important;
+}
+
+.form-control { border-radius: 8px; border: none; }
+
+.btn-dark-custom { 
+    background-color: #6A9EA8; 
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Estilo do Filtro */
+.filter-section {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.appointment-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.badge-datetime {
+    background: white;
+    color: var(--cor-primaria);
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.list-container { max-height: 500px; overflow-y: auto; }

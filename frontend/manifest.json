@@ -1,0 +1,23 @@
+{
+  "name": "Agendamento Clínica Psicologia",
+  "short_name": "Agendamento",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFEFE8", 
+  "theme_color": "#82C1CF",
+  "description": "Aplicativo para registrar agendamentos na clínica de psicologia.",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/agenda192.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons/agenda.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

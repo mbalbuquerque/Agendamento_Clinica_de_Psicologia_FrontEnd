@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica de Psicologia - Agendamentos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div class="container py-5">
+    <header class="text-center mb-5">
+        <h1>Clínica de Psicologia</h1>
+        <p class="text-secondary">Sistema de Gestão de Agendamentos</p>
+    </header>
+
+    <div class="row g-4">
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 id="form-title" class="h4 mb-4">Novo Registro</h2>
+                    <form id="entry-form">
+                        <input type="hidden" id="entry-id">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nome do Paciente</label>
+                            <input type="text" id="paciente" class="form-control" placeholder="Nome completo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Data e Hora</label>
+                            <input type="datetime-local" id="data" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Observações da Sessão</label>
+                            <textarea id="observacoes" class="form-control" rows="3" placeholder="Detalhes ou queixas principais"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark-custom w-100">Salvar Agendamento</button>
+                        <button type="button" id="cancel-edit" class="btn btn-link w-100 text-white mt-2 d-none">Cancelar Edição</button>
+                    </form>
+                    <p id="message"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="h4 mb-0">Agendamentos</h2>
+                        <button id="reload-btn" class="btn btn-sm btn-outline-light">Atualizar Lista</button>
+                    </div>
+
+                    <div class="filter-section p-3 mb-4 rounded">
+                        <p class="small fw-bold mb-2">Filtrar por Período:</p>
+                        <div class="row g-2 align-items-end">
+                            <div class="col-5">
+                                <label class="form-label">Início</label>
+                                <input type="date" id="filter-start" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-5">
+                                <label class="form-label">Fim</label>
+                                <input type="date" id="filter-end" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-2">
+                                <button id="btn-filter" class="btn btn-light btn-sm w-100">🔍</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="entries-list" class="list-container">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js');
+    }
+</script>
+</body>
+</html>
